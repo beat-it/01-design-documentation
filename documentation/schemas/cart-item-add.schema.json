@@ -1,0 +1,13 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "BEAT_IT Add to cart",
+    "type": "object",
+    "properties": {
+        "quantity": {
+            "type": "integer"
+        },
+        "product_id":{
+            "type": "string"
+        }
+    }
+}

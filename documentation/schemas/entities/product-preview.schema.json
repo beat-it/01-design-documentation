@@ -1,0 +1,38 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "BEAT_IT Product preview schema",
+    "type": "object",
+    "properties": {
+        "name": {
+            "type": "string"
+        },
+        "price": {
+            "type": "number"
+        },
+        "description": {
+            "type": "string"
+        },
+        "rating": {
+            "type": "integer",
+            "min": 0,
+            "max": 5
+        },
+        "currency":{
+            "type": "string"
+        },
+        "image":{
+            "type": "object",
+            "properties":{
+                "url" : {
+                    "type": "string"
+                },
+                "thumbnail_url": {
+                    "type": "string"
+                },
+                "catalog_url":{
+                    "type": "string"
+                }
+            }
+        }
+    }
+}

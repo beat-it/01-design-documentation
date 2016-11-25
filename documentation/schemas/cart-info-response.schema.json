@@ -1,0 +1,11 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "BEAT_IT Cart informations response schema",
+    "type": "object",
+    "properties": {
+        "status": {
+            "type": "string"
+        },
+        "data": {"$ref": "./entities/cart-info.schema.json"}
+    }
+}

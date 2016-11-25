@@ -1,0 +1,81 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "BEAT_IT Save cart",
+    "type": "object",
+    "properties": {
+        "delivery": {
+            "type": "string"
+        },
+        "payment": {
+            "type": "string"
+        },
+        "person": {
+            "type": "object",
+            "properties" : {
+                "first_name":{
+                    "type": "string"
+                },
+                "surname":{
+                    "type": "string"
+                },
+                "email":{
+                    "type": "string"
+                },
+                "phone":{
+                    "type": "string"
+                }
+            }
+        },
+        "billing_address":{
+            "type": "object",
+            "properties": {
+                "address": {
+                    "type": "string"
+                },
+                "city": {
+                    "type": "string"
+                },
+                "zip": {
+                    "type": "string"
+                },
+                "country": {
+                    "type": "string"
+                },
+                "company":{
+                    "type": "object",
+                    "properties":{
+                        "name": {
+                            "type": "string"
+                        },
+                        "dic": {
+                            "type": "string"
+                        },
+                        "ico":{
+                            "type": "string"
+                        },
+                        "ic_dph": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "delivery_address": {
+            "type": "object",
+            "properties": {
+                "address": {
+                    "type": "string"
+                },
+                "city": {
+                    "type": "string"
+                },
+                "zip": {
+                    "type": "string"
+                },
+                "country": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}

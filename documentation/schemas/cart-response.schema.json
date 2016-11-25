@@ -1,0 +1,104 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "BEAT_IT Add to cart",
+    "type": "object",
+    "properties": {
+        "status": {
+            "type": "string"
+        },
+        "data":{
+            "type": "object",
+            "properties":{
+                "cart_items":{
+                    "type": "array",
+                    "items": {"$ref": "./entities/cart-item.schema.json#"}
+                },
+                "total_items_price": {
+                    "type": "number"
+                },
+                "delivery": {
+                    "type": "array",
+                    "items": {"$ref": "./entities/payment-delivery.schema.json#"}
+                },
+                "payment": {
+                    "type": "array",
+                    "items": {"$ref": "./entities/payment-delivery.schema.json#"}
+                },
+                "delivery": {
+                    "type": "string"
+                },
+                "payment": {
+                    "type": "string"
+                },
+                "person": {
+                    "type": "object",
+                    "properties" : {
+                        "first_name":{
+                            "type": "string"
+                        },
+                        "surname":{
+                            "type": "string"
+                        },
+                        "email":{
+                            "type": "string"
+                        },
+                        "phone":{
+                            "type": "string"
+                        }
+                    }
+                },
+                "billing_address":{
+                    "type": "object",
+                    "properties": {
+                        "address": {
+                            "type": "string"
+                        },
+                        "city": {
+                            "type": "string"
+                        },
+                        "zip": {
+                            "type": "string"
+                        },
+                        "country": {
+                            "type": "string"
+                        },
+                        "company":{
+                            "type": "object",
+                            "properties":{
+                                "name": {
+                                    "type": "string"
+                                },
+                                "dic": {
+                                    "type": "string"
+                                },
+                                "ico":{
+                                    "type": "string"
+                                },
+                                "ic_dph": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                },
+                "delivery_address": {
+                    "type": "object",
+                    "properties": {
+                        "address": {
+                            "type": "string"
+                        },
+                        "city": {
+                            "type": "string"
+                        },
+                        "zip": {
+                            "type": "string"
+                        },
+                        "country": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

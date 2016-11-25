@@ -23,7 +23,10 @@
         "quantity": {
             "type": "integer"
         },
-        "item_price": {
+        "currency": {
+            "type": "string"
+        },
+        "price": {
             "type": "number"
         },
         "total_price":{

@@ -16,13 +16,11 @@
                 "total_items_price": {
                     "type": "number"
                 },
-                "delivery": {
-                    "type": "array",
-                    "items": {"$ref": "./entities/payment-delivery.schema.json#"}
+                "total_price":{
+                    "type": "number"
                 },
-                "payment": {
-                    "type": "array",
-                    "items": {"$ref": "./entities/payment-delivery.schema.json#"}
+                "currency":{
+                    "type": "string"
                 },
                 "delivery": {
                     "type": "string"

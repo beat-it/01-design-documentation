@@ -84,52 +84,52 @@ documentation:
             "schema": !include schemas/cart-response.schema.json
             example: |
               {
-                "status": "OK",
-                "data":{
-                      "cart_items":[
-                        {
-                            "name": "Test produkt",
-                            "image": {
-                              "url": "http://.....sk/picture/...",
-                              "thumbnail_url": "http://.....sk/picture/thumbnail...",
-                              "catalog_url": "http://.....sk/picture/catalog..."
-                            },
-                            "quantity": 4,
-                            "item_price": 3,
-                            "total_price": 12
-                        }
-                      ],
-
-                      "total_items_price": 12,
-                      "delivery": "",
-                      "payment": "",
-
-                      "person": {
-                          "first_name": "Ladislav",
-                          "surname": "Perduk",
-                          "email": "perduk@bart.sk",
-                          "phone": "0900900900"
+                  "cart_items":[
+                    {
+                        "name": "Test produkt",
+                        "image": {
+                          "url": "http://.....sk/picture/...",
+                          "thumbnail_url": "http://.....sk/picture/thumbnail...",
+                          "catalog_url": "http://.....sk/picture/catalog..."
                         },
-                        "billing_address": {
-                            "address": "Lomnická 22",
-                            "city": "Košice",
-                            "zip": "04001",
-                            "country": "Slovakia",
-                            "company": {
-                                  "name": "ZiZi s.r.o.",
-                                  "dic": "000000000000",
-                                  "ico": "000000000000",
-                                  "ic_dph": "SK000000000000"
-                              }
-                        },
-                        "delivery_address":{
-                            "address": "Lomnická 22",
-                            "city": "Košice",
-                            "zip": "04001",
-                            "country": "Slovakia"
-                        }
+                        "quantity": 4,
+                        "price": 3,
+                        "currency": "EUR",
+                        "total_price": 12
+                    }
+                  ],
+
+                  "total_items_price": 12,
+                  "total_price": 14.50,
+                  "currency": "EUR",
+                  "delivery": "",
+                  "payment": "",
+
+                  "person": {
+                      "first_name": "Ladislav",
+                      "surname": "Perduk",
+                      "email": "perduk@bart.sk",
+                      "phone": "0900900900"
+                    },
+                    "billing_address": {
+                        "address": "Lomnická 22",
+                        "city": "Košice",
+                        "zip": "04001",
+                        "country": "Slovakia",
+                        "company": {
+                              "name": "ZiZi s.r.o.",
+                              "dic": "000000000000",
+                              "ico": "000000000000",
+                              "ic_dph": "SK000000000000"
+                          }
+                    },
+                    "delivery_address":{
+                        "address": "Lomnická 22",
+                        "city": "Košice",
+                        "zip": "04001",
+                        "country": "Slovakia"
+                    }
                   }
-              }
   /info:
     get:
       description: "Získanie rýchleho prehľadu košíka"
@@ -139,13 +139,8 @@ documentation:
             application/json:
               example: |
                 {
-                  "status" : "OK",
-                  "data" : {
-
-                        "count" : 4,
-                        "price" : 20.04
-
-                    }
+                  "count" : 4,
+                  "total_items_price" : 20.04
                 }
               schema: !include schemas/cart-info-response.schema.json
   /deliverypayment:
@@ -156,29 +151,26 @@ documentation:
             application/json:
               example: |
                 {
-                  "status": "OK",
-                  "data":{
-                        "delivery_opts":[
-                            {
-                                "id": "KURIER",
-                                "price": 2.50
-                            },
-                            {
-                                "id": "OSOBNY_ODBER",
-                                "price": 0
-                            }
-                        ],
-                        "payment_opts":[
-                            {
-                                "id": "CARD_ONLINE",
-                                "price": 0
-                            },
-                            {
-                                "id": "DOBIERKA",
-                                "price": 1.50
-                            }
-                        ]
-                    }
+                    "delivery_opts":[
+                        {
+                            "id": "KURIER",
+                            "price": 2.50
+                        },
+                        {
+                            "id": "OSOBNY_ODBER",
+                            "price": 0
+                        }
+                    ],
+                    "payment_opts":[
+                        {
+                            "id": "CARD_ONLINE",
+                            "price": 0
+                        },
+                        {
+                            "id": "DOBIERKA",
+                            "price": 1.50
+                        }
+                    ]
                 }
   /items/{id}:
     uriParameters:
@@ -194,7 +186,8 @@ documentation:
             application/json:
               example: |
                 {
-                  "status" : "OK"
+                  "count" : 4,
+                  "total_items_price" : 20.04
                 }
               schema: !include schemas/cart-item-add-delete-response.schema.json
   /items:
@@ -213,22 +206,23 @@ documentation:
             application/json:
               example: |
                 {
-                  "status" : "OK"
+                  "count" : 4,
+                  "total_items_price" : 20.04
                 }
               schema: !include schemas/cart-item-add-delete-response.schema.json
 /catalog:
   /homepage:
     get:
-      description: "Načítanie produktov pre domovskú stránku eshopu"
+      description: Načítanie produktov pre domovskú stránku eshopu
       responses:
         200:
           body:
             application/json:
               example: |
                 {
-                  "status" : "OK",
-                  "data" : [
+                  "product_list": [
                      {
+                       "product_id": "1",
                        "name": "Product 1",
                        "price": 20.04,
                        "currency": "EUR",
@@ -241,6 +235,7 @@ documentation:
                          }
                      },
                      {
+                      "product_id": "2",
                        "name": "Product 1",
                        "price": 20.04,
                        "currency": "EUR",
@@ -253,6 +248,62 @@ documentation:
                          }
                      },
                      {
+                       "product_id": "3",
+                       "name": "Product 1",
+                       "price": 20.04,
+                       "currency": "EUR",
+                       "description": "Lorem ipsum dolor sit amet...",
+                       "rating": 3,
+                       "image":{
+                            "url": "http://.....sk/picture/...",
+                            "thumbnail_url": "http://.....sk/picture/thumbnail...",
+                            "catalog_url": "http://.....sk/picture/catalog..."
+                         }
+                     }
+                  ]
+                }
+              schema: !include schemas/catalog-homepage-response.sschema.json
+  /search:
+    get:
+      queryParameters:
+        q:
+          description: Vyhľadávaný reťazec
+      description: Vyhľadávanie produktov
+      responses:
+        200:
+          body:
+            application/json:
+              example: |
+                {
+                  "product_list": [
+                     {
+                       "product_id": "1",
+                       "name": "Product 1",
+                       "price": 20.04,
+                       "currency": "EUR",
+                       "description": "Lorem ipsum dolor sit amet...",
+                       "rating": 3,
+                       "image":{
+                            "url": "http://.....sk/picture/...",
+                            "thumbnail_url": "http://.....sk/picture/thumbnail...",
+                            "catalog_url": "http://.....sk/picture/catalog..."
+                         }
+                     },
+                     {
+                      "product_id": "2",
+                       "name": "Product 1",
+                       "price": 20.04,
+                       "currency": "EUR",
+                       "description": "Lorem ipsum dolor sit amet...",
+                       "rating": 3,
+                       "image":{
+                            "url": "http://.....sk/picture/...",
+                            "thumbnail_url": "http://.....sk/picture/thumbnail...",
+                            "catalog_url": "http://.....sk/picture/catalog..."
+                         }
+                     },
+                     {
+                       "product_id": "3",
                        "name": "Product 1",
                        "price": 20.04,
                        "currency": "EUR",

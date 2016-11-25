@@ -3,12 +3,12 @@
     "title": "BEAT_IT Catalog homepage schema",
     "type": "object",
     "properties": {
-        "status": {
-            "type": "string"
-        },
-        "data": {
+        "product_list": {
           "type": "array",
           "properties": {
+              "product_id":{
+                  "type": "string"
+              },
               "name": {
                   "type": "string"
               },

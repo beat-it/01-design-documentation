@@ -1,53 +1,213 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Required meta tags always come first -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
     <title>Beat_IT Eshop</title>
     <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">-->
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i&amp;subset=latin-ext"
+          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Dosis:200,300,400,500,600,700,800&amp;subset=latin-ext"
+          rel="stylesheet">
+    <link rel="stylesheet" href="css/custom.css"/>
 </head>
 <body>
 
-<nav class="navbar navbar-static-top navbar-light bg-faded">
-
-    <div class="">
-        <a href="#" class="navbar-brand">Carousel</a>
-
-        <ul class="nav navbar-nav">
-            <li class="nav-item active">
-                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+<nav>
+    <div class="container">
+        <ul>
+            <li>
+                <a href="">Položka</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Features</a>
+            <li>
+                <a href="">Položka</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Pricing</a>
+            <li>
+                <a href="">Položka</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">About</a>
+            <li>
+                <a href="">Položka</a>
+            </li>
+            <li>
+                <a href="">Položka</a>
             </li>
         </ul>
+        <div id="cart-container">
+            0 ks za 0€
+        </div>
+        <div class="clear"></div>
     </div>
-
-
-    <div id="cart-preview-container" class="pull-right">
-        <i class="glyphicon glyphicon-shopping-cart"></i>
-        <span class="text">5 kusov za 45€</span>
-        <a href="cart.html" class="toCart">
-            KOŠÍK
-        </a>
-    </div>
-
 </nav>
 
+<div id="main-container">
+
+    <div class="container">
+        <h1>
+            Košík
+        </h1>
+
+        <div id="stepper-container">
+            <ul>
+                <li class="active">
+                    <a href="#">
+                        1. Objednané produkty
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        2. Kontaktné údaje
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        3. Sumarizácia objednávky
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        4. Dokončenie objednávky
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div id="cart-items-container">
+            <table id="cart-items">
+                <tr>
+                    <th colspan="2">
+                        Produkt
+                    </th>
+                    <th>
+                        Cena za ks
+                    </th>
+                    <th>
+                       Počet kusov
+                    </th>
+                    <th>
+                        Celkom
+                    </th>
+                    <th>
+
+                    </th>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="http://placehold.it/80x60" alt="Produkt"/>
+                    </td>
+                    <td>
+                        ZiZi
+                    </td>
+                    <td>
+                        150€ / ks
+                    </td>
+                    <td>
+                        10ks
+                    </td>
+                    <td class="item-total-price">
+                        1500€
+                    </td>
+                    <td>
+                        <button class="button">Odstrániť</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div id="payment-delivery-container">
+            <div class="block">
+                <h2>
+                    Spôsob platby
+                </h2>
+                <ul>
+                    <li>
+                        <input type="radio" id="KARTA">
+                        <label for="KARTA">Platba kartou online</label>
+                    </li>
+                    <li>
+                        <input type="radio" id="PREVODOM">
+                        <label for="PREVODOM">Platba bankovým prevodom</label>
+                        <span class="price">
+                            2.50€
+                        </span>
+                    </li>
+                    <li>
+                        <input type="radio" id="DOBIERKA">
+                        <label for="DOBIERKA">Platba na dobierku</label>
+                        <span class="price">
+                            2.50€
+                        </span>
+                    </li>
+                </ul>
+            </div>
+            <div class="block">
+                <h2>
+                    Spôsob dopravy
+                </h2>
+                <ul>
+                    <li>
+                        <input type="radio" id="KURIER">
+                        <label for="KURIER">Kurier UPS / SPS</label>
+                        <span class="price">
+                            2.50€
+                        </span>
+                    </li>
+                    <li>
+                        <input type="radio" id="POSTA_BALIK_NA_ADRESU">
+                        <label for="POSTA_BALIK_NA_ADRESU">Slovenská pošta - Balík na adresu</label>
+                        <span class="price">
+                            2.50€
+                        </span>
+                    </li>
+                    <li>
+                        <input type="radio" id="POSTA_BALIK_NA_POSTU">
+                        <label for="POSTA_BALIK_NA_POSTU">Slovenská pošta - Balík na poštu</label>
+                        <span class="price">
+                            2.50€
+                        </span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="price-summary-container">
+            <div class="free-delivery-info">
+                Pri nákupe tovaru za ďalších 53,52€ získate dopravu zadarmo
+            </div>
+            <table>
+                <tr>
+                    <td>Produkty:</td>
+                    <td>1500€</td>
+                </tr>
+                <tr>
+                    <td>Doprava:</td>
+                    <td>1500€</td>
+                </tr>
+                <tr>
+                    <td>Dobierka:</td>
+                    <td>1500€</td>
+                </tr>
+                <tr>
+                    <td>Celkom k úhrade:</td>
+                    <td>1500€</td>
+                </tr>
+            </table>
+        </div>
+
+        <div id="cart-buttons-container">
+            <a class="button">
+                Späť do obchodu
+            </a>
+
+            <a class="button">
+                Pokračovať
+            </a>
+        </div>
+    </div>
 
 
-
-<!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</div>
 </body>
 </html>

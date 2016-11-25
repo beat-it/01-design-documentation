@@ -3,8 +3,11 @@
     "title": "BEAT_IT Add to cart",
     "type": "object",
     "properties": {
-        "status": {
-            "type": "string"
+        "count": {
+            "type": "integer"
+        },
+        "total_items_price": {
+            "type": "number"
         }
     }
 }

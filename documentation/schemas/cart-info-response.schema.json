@@ -3,9 +3,11 @@
     "title": "BEAT_IT Cart informations response schema",
     "type": "object",
     "properties": {
-        "status": {
-            "type": "string"
+        "count": {
+            "type": "integer"
         },
-        "data": {"$ref": "./entities/cart-info.schema.json"}
+        "total_items_price": {
+            "type": "number"
+        }
     }
 }

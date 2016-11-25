@@ -278,13 +278,11 @@
                 "total_items_price": {
                     "type": "number"
                 },
-                "delivery": {
-                    "type": "array",
-                    "items": {"$ref": "./entities/payment-delivery.schema.json#"}
+                "total_price":{
+                    "type": "number"
                 },
-                "payment": {
-                    "type": "array",
-                    "items": {"$ref": "./entities/payment-delivery.schema.json#"}
+                "currency":{
+                    "type": "string"
                 },
                 "delivery": {
                     "type": "string"
@@ -365,109 +363,107 @@
     }
 }
 </code></pre><p><strong>Example</strong>:</p><pre><code>{
-  "status": "OK",
-  "data":{
-        "cart_items":[
-          {
-              "name": "Test produkt",
-              "image": {
-                "url": "http://.....sk/picture/...",
-                "thumbnail_url": "http://.....sk/picture/thumbnail...",
-                "catalog_url": "http://.....sk/picture/catalog..."
-              },
-              "quantity": 4,
-              "item_price": 3,
-              "total_price": 12
-          }
-        ],
-
-        "total_items_price": 12,
-        "delivery": "",
-        "payment": "",
-
-        "person": {
-            "first_name": "Ladislav",
-            "surname": "Perduk",
-            "email": "perduk@bart.sk",
-            "phone": "0900900900"
+    "cart_items":[
+      {
+          "name": "Test produkt",
+          "image": {
+            "url": "http://.....sk/picture/...",
+            "thumbnail_url": "http://.....sk/picture/thumbnail...",
+            "catalog_url": "http://.....sk/picture/catalog..."
           },
-          "billing_address": {
-              "address": "Lomnická 22",
-              "city": "Košice",
-              "zip": "04001",
-              "country": "Slovakia",
-              "company": {
-                    "name": "ZiZi s.r.o.",
-                    "dic": "000000000000",
-                    "ico": "000000000000",
-                    "ic_dph": "SK000000000000"
-                }
-          },
-          "delivery_address":{
-              "address": "Lomnická 22",
-              "city": "Košice",
-              "zip": "04001",
-              "country": "Slovakia"
-          }
+          "quantity": 4,
+          "price": 3,
+          "currency": "EUR",
+          "total_price": 12
+      }
+    ],
+
+    "total_items_price": 12,
+    "total_price": 14.50,
+    "currency": "EUR",
+    "delivery": "",
+    "payment": "",
+
+    "person": {
+        "first_name": "Ladislav",
+        "surname": "Perduk",
+        "email": "perduk@bart.sk",
+        "phone": "0900900900"
+      },
+      "billing_address": {
+          "address": "Lomnická 22",
+          "city": "Košice",
+          "zip": "04001",
+          "country": "Slovakia",
+          "company": {
+                "name": "ZiZi s.r.o.",
+                "dic": "000000000000",
+                "ico": "000000000000",
+                "ic_dph": "SK000000000000"
+            }
+      },
+      "delivery_address":{
+          "address": "Lomnická 22",
+          "city": "Košice",
+          "zip": "04001",
+          "country": "Slovakia"
+      }
     }
-}
 </code></pre></div></div></div></div></div></div></div><div class="panel panel-white"><div class="panel-heading"><h4 class="panel-title"><a class="collapsed" data-toggle="collapse" href="#panel_cart_info"><span class="parent">/cart</span>/info</a> <span class="methods"><a href="#cart_info_get"><span class="badge badge_get">get</span></a></span></h4></div><div id="panel_cart_info" class="panel-collapse collapse"><div class="panel-body"><div class="list-group"><div onclick="window.location.href = '#cart_info_get'" class="list-group-item"><span class="badge badge_get">get</span><div class="method_description"><p>Získanie rýchleho prehľadu košíka</p></div><div class="clearfix"></div></div></div></div></div><div class="modal fade" tabindex="0" id="cart_info_get"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_get">get</span> <span class="parent">/cart</span>/info</h4></div><div class="modal-body"><div class="alert alert-info"><p>Získanie rýchleho prehľadu košíka</p></div><ul class="nav nav-tabs"><li class="active"><a href="#cart_info_get_response" data-toggle="tab">Response</a></li></ul><div class="tab-content"><div class="tab-pane active" id="cart_info_get_response"><h2>HTTP status code <a href="http://httpstatus.es/200" target="_blank">200</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
     "$schema": "http://json-schema.org/draft-04/schema#",
     "title": "BEAT_IT Cart informations response schema",
     "type": "object",
     "properties": {
-        "status": {
-            "type": "string"
+        "count": {
+            "type": "integer"
         },
-        "data": {"$ref": "./entities/cart-info.schema.json"}
+        "total_items_price": {
+            "type": "number"
+        }
     }
 }
 </code></pre><p><strong>Example</strong>:</p><pre><code>{
-  "status" : "OK",
-  "data" : {
-
-        "count" : 4,
-        "price" : 20.04
-
-    }
+  "count" : 4,
+  "total_items_price" : 20.04
 }
 </code></pre></div></div></div></div></div></div></div><div class="panel panel-white"><div class="panel-heading"><h4 class="panel-title"><a class="collapsed" data-toggle="collapse" href="#panel_cart_deliverypayment"><span class="parent">/cart</span>/deliverypayment</a> <span class="methods"><a href="#cart_deliverypayment_get"><span class="badge badge_get">get</span></a></span></h4></div><div id="panel_cart_deliverypayment" class="panel-collapse collapse"><div class="panel-body"><div class="list-group"><div onclick="window.location.href = '#cart_deliverypayment_get'" class="list-group-item"><span class="badge badge_get">get</span><div class="method_description"></div><div class="clearfix"></div></div></div></div></div><div class="modal fade" tabindex="0" id="cart_deliverypayment_get"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_get">get</span> <span class="parent">/cart</span>/deliverypayment</h4></div><div class="modal-body"><ul class="nav nav-tabs"><li class="active"><a href="#cart_deliverypayment_get_response" data-toggle="tab">Response</a></li></ul><div class="tab-content"><div class="tab-pane active" id="cart_deliverypayment_get_response"><h2>HTTP status code <a href="http://httpstatus.es/200" target="_blank">200</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Example</strong>:</p><pre><code>{
-  "status": "OK",
-  "data":{
-        "delivery_opts":[
-            {
-                "id": "KURIER",
-                "price": 2.50
-            },
-            {
-                "id": "OSOBNY_ODBER",
-                "price": 0
-            }
-        ],
-        "payment_opts":[
-            {
-                "id": "CARD_ONLINE",
-                "price": 0
-            },
-            {
-                "id": "DOBIERKA",
-                "price": 1.50
-            }
-        ]
-    }
+    "delivery_opts":[
+        {
+            "id": "KURIER",
+            "price": 2.50
+        },
+        {
+            "id": "OSOBNY_ODBER",
+            "price": 0
+        }
+    ],
+    "payment_opts":[
+        {
+            "id": "CARD_ONLINE",
+            "price": 0
+        },
+        {
+            "id": "DOBIERKA",
+            "price": 1.50
+        }
+    ]
 }
 </code></pre></div></div></div></div></div></div></div><div class="panel panel-white"><div class="panel-heading"><h4 class="panel-title"><a class="collapsed" data-toggle="collapse" href="#panel_cart_items__id_"><span class="parent">/cart</span>/items/{id}</a> <span class="methods"><a href="#cart_items__id__delete"><span class="badge badge_delete">delete</span></a></span></h4></div><div id="panel_cart_items__id_" class="panel-collapse collapse"><div class="panel-body"><div class="list-group"><div onclick="window.location.href = '#cart_items__id__delete'" class="list-group-item"><span class="badge badge_delete">delete</span><div class="method_description"><p>Odstránenie produktu z košíka</p></div><div class="clearfix"></div></div></div></div></div><div class="modal fade" tabindex="0" id="cart_items__id__delete"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_delete">delete</span> <span class="parent">/cart</span>/items/{id}</h4></div><div class="modal-body"><div class="alert alert-info"><p>Odstránenie produktu z košíka</p></div><ul class="nav nav-tabs"><li class="active"><a href="#cart_items__id__delete_request" data-toggle="tab">Request</a></li><li><a href="#cart_items__id__delete_response" data-toggle="tab">Response</a></li></ul><div class="tab-content"><div class="tab-pane active" id="cart_items__id__delete_request"><h3>URI Parameters</h3><ul><li><strong>Product ID</strong>: <em>required (integer)</em><p>ID produktu, ktorým budeme manipulovať</p></li></ul></div><div class="tab-pane" id="cart_items__id__delete_response"><h2>HTTP status code <a href="http://httpstatus.es/200" target="_blank">200</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
     "$schema": "http://json-schema.org/draft-04/schema#",
     "title": "BEAT_IT Add to cart",
     "type": "object",
     "properties": {
-        "status": {
-            "type": "string"
+        "count": {
+            "type": "integer"
+        },
+        "total_items_price": {
+            "type": "number"
         }
     }
 }
 </code></pre><p><strong>Example</strong>:</p><pre><code>{
-  "status" : "OK"
+  "count" : 4,
+  "total_items_price" : 20.04
 }
 </code></pre></div></div></div></div></div></div></div><div class="panel panel-white"><div class="panel-heading"><h4 class="panel-title"><a class="collapsed" data-toggle="collapse" href="#panel_cart_items"><span class="parent">/cart</span>/items</a> <span class="methods"><a href="#cart_items_post"><span class="badge badge_post">post</span></a></span></h4></div><div id="panel_cart_items" class="panel-collapse collapse"><div class="panel-body"><div class="list-group"><div onclick="window.location.href = '#cart_items_post'" class="list-group-item"><span class="badge badge_post">post</span><div class="method_description"><p>Pridanie produktu do košíka</p></div><div class="clearfix"></div></div></div></div></div><div class="modal fade" tabindex="0" id="cart_items_post"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_post">post</span> <span class="parent">/cart</span>/items</h4></div><div class="modal-body"><div class="alert alert-info"><p>Pridanie produktu do košíka</p></div><ul class="nav nav-tabs"><li class="active"><a href="#cart_items_post_request" data-toggle="tab">Request</a></li><li><a href="#cart_items_post_response" data-toggle="tab">Response</a></li></ul><div class="tab-content"><div class="tab-pane active" id="cart_items_post_request"><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
     "$schema": "http://json-schema.org/draft-04/schema#",
@@ -490,25 +486,29 @@
     "title": "BEAT_IT Add to cart",
     "type": "object",
     "properties": {
-        "status": {
-            "type": "string"
+        "count": {
+            "type": "integer"
+        },
+        "total_items_price": {
+            "type": "number"
         }
     }
 }
 </code></pre><p><strong>Example</strong>:</p><pre><code>{
-  "status" : "OK"
+  "count" : 4,
+  "total_items_price" : 20.04
 }
 </code></pre></div></div></div></div></div></div></div></div></div></div><div class="panel panel-default"><div class="panel-heading"><h3 id="catalog" class="panel-title">/catalog</h3></div><div class="panel-body"><div class="panel-group"><div class="panel panel-white"><div class="panel-heading"><h4 class="panel-title"><a class="collapsed" data-toggle="collapse" href="#panel_catalog_homepage"><span class="parent">/catalog</span>/homepage</a> <span class="methods"><a href="#catalog_homepage_get"><span class="badge badge_get">get</span></a></span></h4></div><div id="panel_catalog_homepage" class="panel-collapse collapse"><div class="panel-body"><div class="list-group"><div onclick="window.location.href = '#catalog_homepage_get'" class="list-group-item"><span class="badge badge_get">get</span><div class="method_description"><p>Načítanie produktov pre domovskú stránku eshopu</p></div><div class="clearfix"></div></div></div></div></div><div class="modal fade" tabindex="0" id="catalog_homepage_get"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_get">get</span> <span class="parent">/catalog</span>/homepage</h4></div><div class="modal-body"><div class="alert alert-info"><p>Načítanie produktov pre domovskú stránku eshopu</p></div><ul class="nav nav-tabs"><li class="active"><a href="#catalog_homepage_get_response" data-toggle="tab">Response</a></li></ul><div class="tab-content"><div class="tab-pane active" id="catalog_homepage_get_response"><h2>HTTP status code <a href="http://httpstatus.es/200" target="_blank">200</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
     "$schema": "http://json-schema.org/draft-04/schema#",
     "title": "BEAT_IT Catalog homepage schema",
     "type": "object",
     "properties": {
-        "status": {
-            "type": "string"
-        },
-        "data": {
+        "product_list": {
           "type": "array",
           "properties": {
+              "product_id":{
+                  "type": "string"
+              },
               "name": {
                   "type": "string"
               },
@@ -545,9 +545,9 @@
     }
 }
 </code></pre><p><strong>Example</strong>:</p><pre><code>{
-  "status" : "OK",
-  "data" : [
+  "product_list": [
      {
+       "product_id": "1",
        "name": "Product 1",
        "price": 20.04,
        "currency": "EUR",
@@ -560,6 +560,7 @@
          }
      },
      {
+      "product_id": "2",
        "name": "Product 1",
        "price": 20.04,
        "currency": "EUR",
@@ -572,6 +573,96 @@
          }
      },
      {
+       "product_id": "3",
+       "name": "Product 1",
+       "price": 20.04,
+       "currency": "EUR",
+       "description": "Lorem ipsum dolor sit amet...",
+       "rating": 3,
+       "image":{
+            "url": "http://.....sk/picture/...",
+            "thumbnail_url": "http://.....sk/picture/thumbnail...",
+            "catalog_url": "http://.....sk/picture/catalog..."
+         }
+     }
+  ]
+}
+</code></pre></div></div></div></div></div></div></div><div class="panel panel-white"><div class="panel-heading"><h4 class="panel-title"><a class="collapsed" data-toggle="collapse" href="#panel_catalog_search"><span class="parent">/catalog</span>/search</a> <span class="methods"><a href="#catalog_search_get"><span class="badge badge_get">get</span></a></span></h4></div><div id="panel_catalog_search" class="panel-collapse collapse"><div class="panel-body"><div class="list-group"><div onclick="window.location.href = '#catalog_search_get'" class="list-group-item"><span class="badge badge_get">get</span><div class="method_description"><p>Vyhľadávanie produktov</p></div><div class="clearfix"></div></div></div></div></div><div class="modal fade" tabindex="0" id="catalog_search_get"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_get">get</span> <span class="parent">/catalog</span>/search</h4></div><div class="modal-body"><div class="alert alert-info"><p>Vyhľadávanie produktov</p></div><ul class="nav nav-tabs"><li class="active"><a href="#catalog_search_get_request" data-toggle="tab">Request</a></li><li><a href="#catalog_search_get_response" data-toggle="tab">Response</a></li></ul><div class="tab-content"><div class="tab-pane active" id="catalog_search_get_request"><h3>Query Parameters</h3><ul><li><strong>q</strong>: <em>(string)</em><p>Vyhľadávaný reťazec</p></li></ul></div><div class="tab-pane" id="catalog_search_get_response"><h2>HTTP status code <a href="http://httpstatus.es/200" target="_blank">200</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "BEAT_IT Catalog homepage schema",
+    "type": "object",
+    "properties": {
+        "product_list": {
+          "type": "array",
+          "properties": {
+              "product_id":{
+                  "type": "string"
+              },
+              "name": {
+                  "type": "string"
+              },
+              "price": {
+                  "type": "number"
+              },
+              "description": {
+                  "type": "string"
+              },
+              "rating": {
+                  "type": "integer",
+                  "min": 0,
+                  "max": 5
+              },
+              "currency":{
+                  "type": "string"
+              },
+              "image":{
+                  "type": "object",
+                  "properties":{
+                      "url" : {
+                          "type": "string"
+                      },
+                      "thumbnail_url": {
+                          "type": "string"
+                      },
+                      "catalog_url":{
+                          "type": "string"
+                      }
+                  }
+              }
+          }
+        }
+    }
+}
+</code></pre><p><strong>Example</strong>:</p><pre><code>{
+  "product_list": [
+     {
+       "product_id": "1",
+       "name": "Product 1",
+       "price": 20.04,
+       "currency": "EUR",
+       "description": "Lorem ipsum dolor sit amet...",
+       "rating": 3,
+       "image":{
+            "url": "http://.....sk/picture/...",
+            "thumbnail_url": "http://.....sk/picture/thumbnail...",
+            "catalog_url": "http://.....sk/picture/catalog..."
+         }
+     },
+     {
+      "product_id": "2",
+       "name": "Product 1",
+       "price": 20.04,
+       "currency": "EUR",
+       "description": "Lorem ipsum dolor sit amet...",
+       "rating": 3,
+       "image":{
+            "url": "http://.....sk/picture/...",
+            "thumbnail_url": "http://.....sk/picture/thumbnail...",
+            "catalog_url": "http://.....sk/picture/catalog..."
+         }
+     },
+     {
+       "product_id": "3",
        "name": "Product 1",
        "price": 20.04,
        "currency": "EUR",

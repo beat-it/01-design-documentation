@@ -83,7 +83,34 @@ nav ul li a{
     right: 0;
     margin-left: auto;
     margin-right: auto;
-    line-height: 45px;
+    padding: 15px;
+}
+
+#search-container .search-input{
+    width: 70%;
+    outline:none;
+    padding: 10px 0;
+    border: none;
+    font-size: 15px;
+    position: relative;
+    float: left;
+    bottom:-1px;
+}
+
+.search-input:focus{
+    outline: none;
+    border: none;
+    box-shadow: none;
+}
+
+#search-container button{
+    float:right;
+    background:none;
+    border: 1px solid #555555;
+    padding: 10px 20px;
+    border-radius: 20px;
+    color: #555;
+    cursor: pointer;
 }
 
 .products-container{

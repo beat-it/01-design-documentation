@@ -2,6 +2,7 @@
     box-sizing: border-box;
 }
 
+
 body{
     background: #f5f5f5;
     font-family: 'Lato', sans-serif;
@@ -17,6 +18,26 @@ a{
     clear: both;
 }
 
+.pull-right{
+    float: right;
+}
+
+.pull-left{
+    float: left;
+}
+
+.text-right{
+    text-align: right;
+}
+
+.text-center{
+    text-align: center;
+}
+
+.text-left{
+    text-align: left;
+}
+
 .container{
     width: 1100px;
     margin: 0 auto;
@@ -28,11 +49,41 @@ a{
     border-radius: 20px;
     color: #555;
     cursor: pointer;
+    display: inline-block;
 }
 
 
-nav{
+.row .block{
+    width: 49%;
+    float: left;
+    padding: 10px;
+}
+
+.row{
+    margin: 20px 0;
+}
+
+.row .block:nth-child(2){
+    margin-left: 2%;
+}
+
+.row .block h2{
+    font-family: 'Dosis', sans-serif;
+    color: #d09683;
+    padding: 5px 0 10px 0;
+    border-bottom: 1px dashed #d09683;
+    margin: 0 0 10px 0;
+}
+
+nav {
+    background: #fff none repeat scroll 0 0;
+    box-shadow: 0 2px 2px 0 rgba(153, 153, 153, 1);
+    left: 0;
     padding: 20px 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
 }
 
 nav ul{
@@ -64,6 +115,10 @@ nav ul li a{
     color: #FFF;
 }
 
+#cart-container a{
+    color: #fff;
+}
+
 #banner-container{
     width: 100%;
     background: url("http://placehold.it/1500x450") no-repeat center;
@@ -81,6 +136,11 @@ nav ul li a{
     box-shadow: 0px 2px 2px 0px rgba(153,153,153,1);
     padding: 5px 15px;
     background: #FFF;
+}
+
+.bordered-block{
+    border: 1px solid #cacaca;
+    border-radius: 5px;
 }
 
 #search-container{
@@ -231,6 +291,10 @@ nav ul li a{
     display: block;
 }
 
+#stepper-container{
+    margin-top: 35px;
+}
+
 #stepper-container ul{
     margin: 0;
     padding: 0;
@@ -267,29 +331,42 @@ nav ul li a{
     background: #73605b;
 }
 
-#cart-items-container{
-    margin-top: 20px;
-}
-
 table#cart-items{
     width:100%;
+    border-collapse: separate;
+    border-spacing: 0 7px;
+}
+
+table#cart-items thead th{
+    background: #555555;
+    padding: 10px 5px;
+    color: #fff;
+}
+
+table#cart-items thead th:first-child{
+    border-radius: 5px 0 0 5px;
+}
+
+table#cart-items thead th:last-child{
+    border-radius: 0 5px 5px 0;
+}
+
+table#cart-items td{
+    padding: 5px 10px;
+}
+
+#payment-delivery-container{
 }
 
 #payment-delivery-container .block{
-    display: inline-block;
+    float: left;
     width: 49%;
-    margin-left: -5px;
-    border: 1px solid #555555;
     padding: 10px;
     border-radius: 5px;
 }
 
-#payment-delivery-container .block:last-child{
-    margin-left: 1%;
-}
-
-#payment-delivery-container .block h2{
-    margin: 0;
+#payment-delivery-container .block:nth-child(2){
+    margin-left: 2%;
 }
 
 #payment-delivery-container .block ul {
@@ -299,5 +376,90 @@ table#cart-items{
 
 #payment-delivery-container .block ul li{
     list-style:none;
+    padding: 5px 0;
 }
 
+#payment-delivery-container .block ul li .price{
+    color: #d09683;
+    font-weight: bold;
+    padding-left: 10px;
+    font-size: 18px;
+}
+
+#price-summary-container{
+    margin: 35px 0;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+#price-summary-container table{
+    float: right;
+}
+
+#price-summary-container .free-delivery-info{
+    float: left;
+    padding-top: 43px;
+}
+
+#price-summary-container table tr td{
+    padding: 2px 0;
+}
+
+#price-summary-container table tr.total-price td{
+    font-weight: bold;
+    color: #d09683;
+    font-size: 18px;
+    border-top: 1px solid #cacaca;
+}
+
+#cart-buttons-container{
+    margin-bottom: 35px;
+}
+
+#cart-buttons-container .button-cart-continue{
+    padding: 10px 50px;
+    background: #73605b;
+    color: #fff;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+
+
+#cart-contact-container .block label{
+    display: block;
+    padding: 5px 3px;
+    color: #555555;
+    font-weight: bold;
+}
+
+
+#cart-contact-container input[type='text']{
+    width: 100%;
+    border-radius: 20px;
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    border: 1px solid #cacaca;
+}
+
+#cart-contact-container input[type='text'].warning{
+    border: 1px solid #ca2718;
+}
+
+
+#billing-type-container{
+    font-size: 16px;
+    font-weight: bold;
+    border-bottom: 1px dashed #d09683;
+    padding: 10px 0;
+}
+
+#billing-type-container input{
+    margin-left: 10px;
+}
+
+#delivery-switch-container{
+    font-size: 16px;
+    font-weight: bold;
+}

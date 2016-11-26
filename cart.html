@@ -36,7 +36,9 @@
             </li>
         </ul>
         <div id="cart-container">
-            0 ks za 0€
+            <a href="cart.html">
+                0 ks za 0€
+            </a>
         </div>
         <div class="clear"></div>
     </div>
@@ -52,17 +54,17 @@
         <div id="stepper-container">
             <ul>
                 <li class="active">
-                    <a href="#">
+                    <a href="cart.html">
                         1. Objednané produkty
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="cart2.html">
                         2. Kontaktné údaje
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a  href="cart3.html">
                         3. Sumarizácia objednávky
                     </a>
                 </li>
@@ -74,67 +76,71 @@
             </ul>
         </div>
 
-        <div id="cart-items-container">
-            <table id="cart-items">
-                <tr>
-                    <th colspan="2">
-                        Produkt
-                    </th>
-                    <th>
-                        Cena za ks
-                    </th>
-                    <th>
-                       Počet kusov
-                    </th>
-                    <th>
-                        Celkom
-                    </th>
-                    <th>
-
-                    </th>
-                </tr>
-                <tr>
-                    <td>
-                        <img src="http://placehold.it/80x60" alt="Produkt"/>
-                    </td>
-                    <td>
-                        ZiZi
-                    </td>
-                    <td>
-                        150€ / ks
-                    </td>
-                    <td>
-                        10ks
-                    </td>
-                    <td class="item-total-price">
-                        1500€
-                    </td>
-                    <td>
-                        <button class="button">Odstrániť</button>
-                    </td>
-                </tr>
+        <div id="cart-items-container" class="row">
+            <table id="cart-items" cellpadding="0" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th colspan="3" class="text-left">
+                            Produkt
+                        </th>
+                        <th class="text-center">
+                            Cena za ks
+                        </th>
+                        <th class="text-center">
+                            Počet kusov
+                        </th>
+                        <th class="text-center">
+                            Celkom
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <img src="http://placehold.it/80x60" alt="Produkt"/>
+                        </td>
+                        <td>
+                            ZiZi
+                        </td>
+                        <td>
+                            <button class="button">Odstrániť</button>
+                        </td>
+                        <td class="text-center">
+                            150€ / ks
+                        </td>
+                        <td class="text-center">
+                            10ks
+                        </td>
+                        <td class="item-total-price text-center">
+                            1500€
+                        </td>
+                    </tr>
+                </tbody>
             </table>
         </div>
 
-        <div id="payment-delivery-container">
-            <div class="block">
+        <div id="payment-delivery-container" class="row">
+            <div class="block bordered-block">
                 <h2>
                     Spôsob platby
                 </h2>
                 <ul>
                     <li>
-                        <input type="radio" id="KARTA">
+                        <input name="payment" type="radio" id="KARTA">
                         <label for="KARTA">Platba kartou online</label>
+                        <span class="price">
+                            0€
+                        </span>
                     </li>
                     <li>
-                        <input type="radio" id="PREVODOM">
+                        <input name="payment" type="radio" id="PREVODOM">
                         <label for="PREVODOM">Platba bankovým prevodom</label>
                         <span class="price">
                             2.50€
                         </span>
                     </li>
                     <li>
-                        <input type="radio" id="DOBIERKA">
+                        <input name="payment" type="radio" id="DOBIERKA">
                         <label for="DOBIERKA">Platba na dobierku</label>
                         <span class="price">
                             2.50€
@@ -142,27 +148,27 @@
                     </li>
                 </ul>
             </div>
-            <div class="block">
+            <div class="block bordered-block">
                 <h2>
                     Spôsob dopravy
                 </h2>
                 <ul>
                     <li>
-                        <input type="radio" id="KURIER">
+                        <input name="delivery" type="radio" id="KURIER">
                         <label for="KURIER">Kurier UPS / SPS</label>
                         <span class="price">
                             2.50€
                         </span>
                     </li>
                     <li>
-                        <input type="radio" id="POSTA_BALIK_NA_ADRESU">
+                        <input name="delivery" type="radio" id="POSTA_BALIK_NA_ADRESU">
                         <label for="POSTA_BALIK_NA_ADRESU">Slovenská pošta - Balík na adresu</label>
                         <span class="price">
                             2.50€
                         </span>
                     </li>
                     <li>
-                        <input type="radio" id="POSTA_BALIK_NA_POSTU">
+                        <input name="delivery" type="radio" id="POSTA_BALIK_NA_POSTU">
                         <label for="POSTA_BALIK_NA_POSTU">Slovenská pošta - Balík na poštu</label>
                         <span class="price">
                             2.50€
@@ -170,13 +176,14 @@
                     </li>
                 </ul>
             </div>
+            <div class="clear"></div>
         </div>
 
-        <div id="price-summary-container">
+        <div id="price-summary-container" class="row bordered-block">
             <div class="free-delivery-info">
                 Pri nákupe tovaru za ďalších 53,52€ získate dopravu zadarmo
             </div>
-            <table>
+            <table cellpadding="0" cellspacing="0">
                 <tr>
                     <td>Produkty:</td>
                     <td>1500€</td>
@@ -189,21 +196,23 @@
                     <td>Dobierka:</td>
                     <td>1500€</td>
                 </tr>
-                <tr>
+                <tr class="total-price">
                     <td>Celkom k úhrade:</td>
                     <td>1500€</td>
                 </tr>
             </table>
+            <div class="clear"></div>
         </div>
 
-        <div id="cart-buttons-container">
-            <a class="button">
+        <div id="cart-buttons-container" class="row">
+            <a class="button pull-left">
                 Späť do obchodu
             </a>
 
-            <a class="button">
+            <a href="/cart2.html" class="button button-cart-continue pull-right">
                 Pokračovať
             </a>
+            <div class="clear"></div>
         </div>
     </div>
 

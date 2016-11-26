@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>Beat_IT Eshop</title>
+    <!-- Latest compiled and minified CSS -->
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">-->
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i&amp;subset=latin-ext"
+          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Dosis:200,300,400,500,600,700,800&amp;subset=latin-ext"
+          rel="stylesheet">
+    <link rel="stylesheet" href="css/custom.css"/>
+</head>
+<body>
+
+<nav>
+    <div class="container">
+        <ul>
+            <li>
+                <a href="">Položka</a>
+            </li>
+            <li>
+                <a href="">Položka</a>
+            </li>
+            <li>
+                <a href="">Položka</a>
+            </li>
+            <li>
+                <a href="">Položka</a>
+            </li>
+            <li>
+                <a href="">Položka</a>
+            </li>
+        </ul>
+        <div id="cart-container">
+            <a href="cart.html">
+                0 ks za 0€
+            </a>
+        </div>
+        <div class="clear"></div>
+    </div>
+</nav>
+
+<div id="main-container">
+
+    <div class="container">
+        <h1>
+            Kontaktné údaje
+        </h1>
+
+        <div id="stepper-container">
+            <ul>
+                <li>
+                    <a href="cart.html">
+                        1. Objednané produkty
+                    </a>
+                </li>
+                <li class="active">
+                    <a href="cart2.html">
+                        2. Kontaktné údaje
+                    </a>
+                </li>
+                <li>
+                    <a  href="cart3.html">
+                        3. Sumarizácia objednávky
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        4. Dokončenie objednávky
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div id="cart-contact-container">
+
+            <div class="row">
+                <h2>
+                    Osobné údaje
+                </h2>
+            </div>
+            <div id="person-container" class="row">
+                <div class="block">
+                    <label for="first-name">Meno</label>
+                    <input id="first-name" name="name" type="text" class="warning"/>
+
+                    <label for="phone">Telefónne číslo</label>
+                    <input id="phone" name="phone" type="text"/>
+                </div>
+                <div class="block">
+                    <label for="surname">Priezvisko</label>
+                    <input id="surname" name="name" type="text" />
+                    <label for="email">Email</label>
+                    <input id="email" name="phone" type="text"/>
+                </div>
+                <div class="clear"></div>
+            </div>
+
+            <div id="billing-type-container" class="row">
+                <span>
+                    Fakturačná adresa:
+                </span>
+                <input type="radio" name="billing-type" value="personal" id="billing-personal"/>
+                <label for="billing-personal"> Nakupujem súkromne </label>
+                <input type="radio" name="billing-type" value="personal" id="billing-company"/>
+                <label for="billing-company"> Nakupujem na firmu </label>
+            </div>
+
+            <div id="billing-company-container"class="row">
+                <div class="block">
+                    <label for="company-name">Názov firmy</label>
+                    <input id="company-name" name="company-name" type="text" />
+
+                    <label for="ico">IČO</label>
+                    <input id="ico" name="ico" type="text"/>
+                </div>
+                <div class="block">
+                    <label for="dic">DIČ</label>
+                    <input id="dic" name="dic" type="text" />
+
+                    <label for="ic-dph">IČ DPH</label>
+                    <input id="ic-dph" name="ic-dph" type="text"/>
+                </div>
+                <div class="clear"></div>
+            </div>
+
+            <div id="billing-container" class="row">
+                <div class="block">
+                    <label for="billing-address">Ulica a číslo</label>
+                    <input id="billing-address" name="billing-address" type="text" />
+
+                    <label for="billing-city">Mesto</label>
+                    <input id="billing-city" name="billing-city" type="text" />
+                </div>
+                <div class="block">
+
+                    <label for="billing-zip">PSČ</label>
+                    <input id="billing-zip" name="billing-zip" type="text"/>
+
+
+                    <label for="billing-country">Štát</label>
+                    <input id="billing-country" name="billing-country" type="text"/>
+                </div>
+                <div class="clear"></div>
+            </div>
+
+            <div id="delivery-switch-container" class="row">
+                <input type="checkbox" name="delivery-switch" id="delivery-switch">
+                <label for="delivery-switch">Dodacia adresa je iná ako fakturačná</label>
+            </div>
+
+            <div class="row">
+                <h2>
+                    Dodacia adresa
+                </h2>
+            </div>
+
+            <div id="delivery-container" class="row">
+                <div class="block">
+                    <label for="delivery-address">Ulica a číslo</label>
+                    <input id="delivery-address" name="billing-address" type="text" />
+
+                    <label for="delivery-city">Mesto</label>
+                    <input id="delivery-city" name="billing-city" type="text" />
+                </div>
+                <div class="block">
+
+                    <label for="delivery-zip">PSČ</label>
+                    <input id="delivery-zip" name="billing-zip" type="text"/>
+
+
+                    <label for="delivery-country">Štát</label>
+                    <input id="delivery-country" name="billing-country" type="text"/>
+                </div>
+                <div class="clear"></div>
+            </div>
+
+            <div id="cart-buttons-container" class="row">
+                <a class="button pull-left" href="cart.html">
+                    Späť do košíka
+                </a>
+
+                <a href="/cart3.html" class="button button-cart-continue pull-right">
+                    Pokračovať
+                </a>
+                <div class="clear"></div>
+            </div>
+        </div>
+
+    </div>
+
+
+</div>
+</body>
+</html>

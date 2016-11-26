@@ -107,6 +107,10 @@ nav ul li a{
     padding: 0 15px;
 }
 
+#main-container{
+    margin-top: 110px;
+}
+
 #cart-container{
     background: url("../images/cart-icon.png") no-repeat 13px center #73605b;
     float: right;
